@@ -39,15 +39,26 @@ function calculateWages() {
         workType = 2;
     }
 
+    let wage = 0;
     switch (workType) {
         case 1:
             console.log(`The Employee Wage for 8 Hours on $20/hour is: ${20 * 8}`);
+            wage = 20 * 8;
             break;
         case 0:
             console.log(`The Employee Wage for 4 Hours on $20/hour is: ${20 * 4}`);
+            wage = 20 * 4;
             break;
         case 2:
             console.log(`Due to No Working Hours, the total Wage is $0`);
+            break;
     }
+
+    return wage;
 }
-calculateWages();
+// calculateWages();
+
+// UC4 - Calculating Wages for a Month
+let oneDayWage = calculateWages();
+let totalWage = 20 * oneDayWage;
+console.log(`The Total Wage of Employee for a Month is $${totalWage}`);
