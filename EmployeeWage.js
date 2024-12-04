@@ -9,7 +9,7 @@ function checkAttendance() {
 
     return attendence;
 }
-
+`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `
 const attendence = checkAttendance();
 if (attendence) {
     console.log("The Employee is Present");
