@@ -9,7 +9,7 @@ function checkAttendance() {
 
     return attendence;
 }
-`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         `
+`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               `
 const attendence = checkAttendance();
 // if (attendence) {
 //     console.log("The Employee is Present");
@@ -21,6 +21,8 @@ const attendence = checkAttendance();
 // UC2 - Ability to Calculate Employee Wage based on Part time or Full Time work
 function getWorkType() {
     let workType = 0;
+    const randomNumber = Math.random().toFixed(2);
+
     if (randomNumber < 0.33) {
         workType = 1;
     }
@@ -31,16 +33,31 @@ function getWorkType() {
     return workType;
 }
 
-switch (workType) {
-    case 1:
-        console.log(`The Employee Wage for 8 Hours on $20/hour is: ${20 * 8}`);
-        break;
-    case 0:
-        console.log(`The Employee Wage for 4 Hours on $20/hour is: ${20 * 4}`);
-        break;
-    case 2:
-        console.log(`Due to No Working Hours, the total Wage is $0`);
+const workType = getWorkType();
+const partTimeWage = 4;
+const fullTimeWage = 8;
+const noTimeWage = 0;
+const perHourWage = 20;
+
+if (attendence) {
+
+    switch (workType) {
+        case 0:
+            console.log(`The Employee Wage for No Working Hours is: ${noTimeWage * perHourWage}`);
+            break;
+        case 1:
+            console.log(`The Employee Wage for 4 Hours on $20/hour is: ${partTimeWage * perHourWage}`);
+            break;
+        case 2:
+            console.log(`The Employee Wage for 8 Hours on $20/hour is: ${fullTimeWage * perHourWage}`);
+    }
+
 }
+else {
+    console.log("No Wage as the Employee is Absent");
+}
+
+
 
 
 
