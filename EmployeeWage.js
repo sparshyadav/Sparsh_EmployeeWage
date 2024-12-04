@@ -1,11 +1,21 @@
 // UC1 - Ability to check Employee is Present or Absent
-const randomNumber=Math.random().toFixed(2);
-let attendence=0;
-if(randomNumber>0.5){
-    attendence=1;
+function checkAttendance() {
+    const randomNumber = Math.random().toFixed(2);
+    let attendence = 0;
+    if (randomNumber > 0.5) {
+        attendence = 1;
+
+    }
+
+    return attendence;
+}
+
+const attendence = checkAttendance();
+if (attendence) {
     console.log("The Employee is Present");
 }
-else{
+else {
     console.log("The Employee is Absent");
 }
+
 
