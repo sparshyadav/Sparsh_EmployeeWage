@@ -86,8 +86,17 @@ function calculateDailyWage() {
         return 0;
     }
 }
-const dailyWage = calculateDailyWage();
-console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
+// const dailyWage = calculateDailyWage();
+// console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
+
+
+// Calculate Wages for a Month assuming 20 Working Days in a Month
+let monthlyWage = 0;
+for (let i = 0; i < 20; i++) {
+    monthlyWage += calculateDailyWage();
+    console.log(`Wage till Day ${i + 1} is: ${monthlyWage}`);
+}
+console.log(`The Monthly Wage of the Employee is: ${monthlyWage}`);
 
 
 
