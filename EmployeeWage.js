@@ -59,35 +59,32 @@ function getWorkType() {
 
 
 // Refactor the code to calculate the daily wage into a function
-function calculateDailyWage() {
+function calculateDailyHours() {
     const workType = getWorkType();
-    const partTimeWage = 4;
-    const fullTimeWage = 8;
-    const noTimeWage = 0;
-    const perHourWage = 20;
 
     if (attendence) {
 
-        let dailyWage = 0;
+        let hours = 0;
         switch (workType) {
             case 0:
-                dailyWage = noTimeWage * perHourWage;
+                hours=0;
                 break;
             case 1:
-                dailyWage = partTimeWage * perHourWage;
+                hours=4;
                 break;
             case 2:
-                dailyWage = fullTimeWage * perHourWage;
+                hours=8;
+                break;
         }
 
-        return dailyWage;
+        return hours;
     }
     else {
         return 0;
     }
 }
-const dailyWage = calculateDailyWage();
-console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
+const dailyWage = calculateDailyHours();
+console.log(`The Daily Hours of the Employee is: ${dailyWage}`);
 
 
 
