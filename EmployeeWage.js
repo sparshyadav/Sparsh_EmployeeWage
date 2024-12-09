@@ -26,7 +26,7 @@ function getWorkType() {
     if (randomNumber < 0.33) {
         workType = 1;
     }
-    else if (randomNumber > 0.33 ) {
+    else if (randomNumber > 0.33) {
         workType = 2;
     }
 
@@ -58,7 +58,7 @@ function getWorkType() {
 // }
 
 
-// Refactor the code to calculate the daily wage into a function
+// UC3 - Refactor the code to calculate the daily wage into a function
 function calculateDailyHours() {
     const workType = getWorkType();
 
@@ -87,14 +87,14 @@ function calculateDailyHours() {
 // console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
 
 
-// UC3 - Calculate Wages for a Month assuming 20 Working Days in a Month
+// UC4 - Calculate Wages for a Month assuming 20 Working Days in a Month
 let monthlyWage = 0;
-let monthlyHours=0;
+let monthlyHours = 0;
 let hours = 0;
 for (let i = 0; i < 20; i++) {
     hours = calculateDailyHours();
     dailyWage = hours * 20;
-    monthlyHours+=hours;
+    monthlyHours += hours;
     monthlyWage += hours * 20;
     console.log(`Working Hours of Day ${i + 1} is: ${hours}`);
     console.log(`Hours till Day ${i + 1} is: ${monthlyHours}`);
