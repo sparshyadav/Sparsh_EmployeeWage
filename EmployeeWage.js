@@ -25,9 +25,8 @@ function getWorkType() {
 
     if (randomNumber < 0.33) {
         workType = 1;
-    } else if (randomNumber < 0.66) {
-        workType = 0;
-    } else {
+    }
+    else if (randomNumber > 0.33) {
         workType = 2;
     }
 
@@ -60,35 +59,49 @@ function getWorkType() {
 
 
 // UC3 - Refactor the code to calculate the daily wage into a function
-function calculateDailyWage() {
+function calculateDailyHours() {
     const workType = getWorkType();
-    const partTimeWage = 4;
-    const fullTimeWage = 8;
-    const noTimeWage = 0;
-    const perHourWage = 20;
 
     if (attendence) {
 
-        let dailyWage = 0;
+        let hours = 0;
         switch (workType) {
             case 0:
-                dailyWage = noTimeWage * perHourWage;
+                hours = 0;
                 break;
             case 1:
-                dailyWage = partTimeWage * perHourWage;
+                hours = 4;
                 break;
             case 2:
-                dailyWage = fullTimeWage * perHourWage;
+                hours = 8;
+                break;
         }
 
-        return dailyWage;
+        return hours;
     }
     else {
         return 0;
     }
 }
-// const dailyWage = calculateDailyWage();
+// const dailyWage = calculateDailyHours();
 // console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
+
+
+// // UC4 - Calculate Wages for a Month assuming 20 Working Days in a Month
+// let monthlyWage = 0;
+// let monthlyHours = 0;
+// let hours = 0;
+// for (let i = 0; i < 20; i++) {
+//     hours = calculateDailyHours();
+//     dailyWage = hours * 20;
+//     monthlyHours += hours;
+//     monthlyWage += hours * 20;
+//     console.log(`Working Hours of Day ${i + 1} is: ${hours}`);
+//     console.log(`Hours till Day ${i + 1} is: ${monthlyHours}`);
+//     console.log(`Wage of Day ${i + 1} is: ${dailyWage}`);
+//     console.log(`Wage till Day ${i + 1} is: ${monthlyWage}`);
+//     console.log(" ")
+// }
 
 
 // // UC4 - Calculate Wages for a Month assuming 20 Working Days in a Month
@@ -101,7 +114,7 @@ function calculateDailyWage() {
 
 
 // UC5 - Calculate Wages till a condition of total working hours of 160 or max days is reached of 20
-let hours = 0;
+hours = 0;
 let days = 0;
 let wage = 0;
 while (hours <= 160 && days <= 20) {
