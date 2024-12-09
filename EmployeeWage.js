@@ -87,8 +87,8 @@ function calculateDailyWage() {
         return 0;
     }
 }
-// const dailyWage = calculateDailyWage();
-// console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
+const dailyWage = calculateDailyWage();
+console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
 
 
 // // UC4 - Calculate Wages for a Month assuming 20 Working Days in a Month
