@@ -26,7 +26,7 @@ function getWorkType() {
     if (randomNumber < 0.33) {
         workType = 1;
     }
-    else if (randomNumber > 0.33 && randomNumber < 0.66) {
+    else if (randomNumber > 0.33 ) {
         workType = 2;
     }
 
@@ -89,12 +89,15 @@ function calculateDailyHours() {
 
 // UC3 - Calculate Wages for a Month assuming 20 Working Days in a Month
 let monthlyWage = 0;
+let monthlyHours=0;
 let hours = 0;
 for (let i = 0; i < 20; i++) {
     hours = calculateDailyHours();
     dailyWage = hours * 20;
+    monthlyHours+=hours;
     monthlyWage += hours * 20;
     console.log(`Working Hours of Day ${i + 1} is: ${hours}`);
+    console.log(`Hours till Day ${i + 1} is: ${monthlyHours}`);
     console.log(`Wage of Day ${i + 1} is: ${dailyWage}`);
     console.log(`Wage till Day ${i + 1} is: ${monthlyWage}`);
     console.log(" ")
