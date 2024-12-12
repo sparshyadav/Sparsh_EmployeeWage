@@ -87,6 +87,7 @@ function calculateDailyWage() {
         return 0;
     }
 }
+
 const dailyWage = calculateDailyWage();
 console.log(`The Daily Wage of the Employee is: ${dailyWage}`);
 
