@@ -1,5 +1,4 @@
 # Employee Wage 
-
 ### **UC1 - Check Employee is Present or Absent** 
 **Solution:**  
 - Generate a random number between 0 and 1 using `Math.random()`.
